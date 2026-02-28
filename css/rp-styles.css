@@ -1,0 +1,160 @@
+#wpadminbar{
+display:none;
+}
+html {
+height: 100%;
+width: 100%;
+position: relative;
+background-image: url('../img/bg.png');
+margin-top: 0 !important;
+}
+body {
+margin: 0;
+height: 100%;
+}
+iframe {
+position: relative;
+width: 100%;
+height: 98%;
+display: block;
+margin: 0 auto;
+background-color: #fff !important;
+-webkit-transition: all 1s ease-in-out;
+-moz-transition: all 1s ease-in-out;
+-o-transition: all 1s ease-in-out;
+transition: all 1s ease-in-out;
+}
+#preview-bar {
+height:65px;
+width: 100%;
+background-color: #222222;
+border-bottom: 3px solid #333333;
+top: 0;
+box-sizing: border-box;
+padding:7px 0;
+}
+
+/* inner container keeps content padded and now uses flex layout */
+.rp-container {
+    max-width: 100%;
+    padding: 0 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} 
+#aa-logo {
+width: 350px;
+height: 50px;
+background-image: url('https://phildesigns.com/wp-content/uploads/2025/12/phildesigns-logo.svg');
+background-repeat: no-repeat;
+background-position: left 25px center;
+background-size: contain;
+}
+.sel-box{
+position: relative;
+z-index: 3;
+color:#fff;
+font-family: 'Poppins', sans-serif;
+display: inline-block;
+} 
+a{
+text-decoration:none;
+color:#fff;
+font-family: 'Poppins', sans-serif;
+font-size: 0.85em;
+font-weight: 600;
+}
+em{
+font-size:.75em;
+font-weight:300;
+}
+#select{
+display:block;
+width:275px;
+height:20px;
+padding:4px;
+cursor:pointer;
+font-weight:600;
+line-height:1.5;
+font-size: 0.85em;
+}
+#select i{
+    font-size:15px;
+}
+.select{
+border: 1px solid #333333;
+cursor: pointer;
+display: inline-block;
+height: 30px;
+position: relative;
+padding-right: 1.5em;
+line-height: 1;
+} 
+.fa-chevron-down{
+position: absolute;
+right: 8px;
+top: 50%;
+transform: translateY(-50%);
+} 
+.toc-odd{
+position:absolute;
+top:32px;
+background:#222222;
+width:285px;
+display:none;
+list-style-type: none;
+list-style-position:inside;
+margin:0;
+padding:0;
+z-index:1;
+}
+.toc-odd li{
+padding:5px 10px;
+border-bottom:1px solid #333333;
+list-style-type: none;
+}
+.toc-odd li:hover{
+background-color:#333333
+}
+i{
+padding:5px;
+text-align: center;
+width: 2.14286em;
+margin-left: -10px;
+}
+.title{
+color: #fff;
+text-align: center;
+flex: 1;
+margin: 0;
+font-family: 'Poppins', sans-serif;
+font-size: 1.35em;
+font-weight: 600;
+}
+
+/* orientation toggle button */
+#orientation-toggle {
+    display: inline-block;
+    padding: 10px 30px;
+    color: #000000;
+    background-color: #F7941D;
+    border: 2px solid #F7941D;
+    cursor: pointer;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    text-align: center;
+    text-decoration: none;
+    text-transform:capitalize;
+    transition: all 0.3s ease;
+    border-radius: 30px;
+    position: relative;
+    z-index: 2;
+    margin-left: 10px;
+}
+#orientation-toggle:hover {
+    color: #ffffff;
+    background-color: #333333;
+    border-color: #F7941D;
+}
