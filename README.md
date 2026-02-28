@@ -1,16 +1,15 @@
-# responsive-preview
+# Responsive Preview
 
-=== Responsive Preview ===
 Tags: css, jQuery, javascript
 Requires at least: 3.6.0
 Tested up to: 4.5
 License: GPL2
 
-== Description ==
+## Description 
 
 This plugin wraps your Wordpress site within an interface to allow you to preview the mobile responsiveness of your theme.
 
-= Tested on =
+## Tested on 
 * Mac Firefox 
 * Mac Safari
 * Mac Chrome
@@ -21,10 +20,10 @@ This plugin wraps your Wordpress site within an interface to allow you to previe
 * iPad Safari
 * PC ie7
 
-= Website =
-http://www.alchemyandaim.com/
+## Website 
+http://www.phildesigns.com/
 
-== Installation ==
+## Installation 
 
 1. Upload ‘responsive-preview’ to the '/wp-content/plugins/' directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
@@ -32,7 +31,7 @@ http://www.alchemyandaim.com/
 4. Click the ‘Responsive Preview’ Link on the admin bar
 5. This will open a new window with your responsive toolbar
 
-== Changelog ==
+## Changelog 
 
 Version 3.0.0
 • Bumped version for major release
