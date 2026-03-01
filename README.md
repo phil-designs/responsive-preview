@@ -2,7 +2,7 @@
 
 Tags: css, jQuery, javascript
 Requires at least: 3.6.0
-Tested up to: 4.5
+Tested up to: 6.9.1
 License: GPL2
 
 ## Description 
@@ -10,15 +10,11 @@ License: GPL2
 This plugin wraps your Wordpress site within an interface to allow you to preview the mobile responsiveness of your theme.
 
 ## Tested on 
-* Mac Firefox 
-* Mac Safari
-* Mac Chrome
-* PC Safari
-* PC Chrome	
-* PC Firefox
-* iPhone Safari
-* iPad Safari
-* PC ie7
+* Firefox 
+* Safari
+* Chrome
+* Opera
+* MS Edge
 
 ## Website 
 http://www.phildesigns.com/
