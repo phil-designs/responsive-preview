@@ -1,6 +1,6 @@
 # Responsive Preview
 
-Tags: css, jQuery, javascript
+Tags: css, jQuery, javascript, php
 Requires at least: 3.6.0
 Tested up to: 6.9.1
 License: GPL2
