@@ -1,8 +1,8 @@
 # Responsive Preview
 
-Tags: css, jQuery, javascript, php
+Tags: css, jQuery, javascript
 Requires at least: 3.6.0
-Tested up to: 6.9.1
+Tested up to: 4.5
 License: GPL2
 
 ## Description 
@@ -10,11 +10,15 @@ License: GPL2
 This plugin wraps your Wordpress site within an interface to allow you to preview the mobile responsiveness of your theme.
 
 ## Tested on 
-* Firefox 
-* Safari
-* Chrome
-* Opera
-* MS Edge
+* Mac Firefox 
+* Mac Safari
+* Mac Chrome
+* PC Safari
+* PC Chrome	
+* PC Firefox
+* iPhone Safari
+* iPad Safari
+* PC ie7
 
 ## Website 
 http://www.phildesigns.com/
@@ -28,6 +32,10 @@ http://www.phildesigns.com/
 5. This will open a new window with your responsive toolbar
 
 ## Changelog 
+
+Version 3.1.0
+• Added User Agent Switcher — 13 baked-in agents (Chrome, Firefox, Safari, Edge · desktop & mobile) with JS-level navigator.userAgent override that persists across iframe navigation
+• Added Responsive Walk — play/pause animation that sweeps the iframe from 1440px down to 320px over 10 seconds, with a scrubable progress bar pinned to the bottom of the preview window
 
 Version 3.0.0
 • Bumped version for major release

@@ -2,9 +2,9 @@
 
 /**
 * Plugin Name: Responsive Preview
-* Plugin URI: https://www.phildesigns.com
+* Plugin URI: http://www.phildesigns.com
 * Description: This plugin wraps your Wordpress site within an interface to allow you to preview the mobile responsiveness of your theme.
-* Version: 3.0.0
+* Version: 3.1.0
 * Author: phil.designs | Phillip De Vita
 * Author URI: http://www.phildesigns.com
 * License: GPL2
