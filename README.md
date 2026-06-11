@@ -1,55 +1,64 @@
-# Responsive Preview
+# PhilDesigns Responsive Preview
 
-Tags: css, jQuery, javascript
-Requires at least: 3.6.0
-Tested up to: 4.5
-License: GPL2
+**Preview your WordPress site across device viewports, user agents, and animated width walks — directly from the admin toolbar.**
 
-## Description 
+Tags: responsive, preview, viewport, mobile, testing
+Requires at least: 6.7
+Tested up to: 7.0
+Requires PHP: 7.4
+License: GPL-2.0-or-later
 
-This plugin wraps your Wordpress site within an interface to allow you to preview the mobile responsiveness of your theme.
+---
 
-## Tested on 
-* Mac Firefox 
-* Mac Safari
-* Mac Chrome
-* PC Safari
-* PC Chrome	
-* PC Firefox
-* iPhone Safari
-* iPad Safari
-* PC ie7
+## Description
 
-## Website 
-http://www.phildesigns.com/
+Responsive Preview adds a link to the WordPress admin toolbar that opens your site inside a full-screen preview interface. Switch between device viewport sizes, spoof browser user agents, and use the Responsive Walk feature to animate a smooth sweep from 1440px down to 320px.
 
-## Installation 
+**Features:**
 
-1. Upload ‘responsive-preview’ to the '/wp-content/plugins/' directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Make changes to options on the Settings>Responsive Preview page
-4. Click the ‘Responsive Preview’ Link on the admin bar
-5. This will open a new window with your responsive toolbar
+- **Device Viewports** — desktop, laptops, iPad, iPhones, Pixel, and more; portrait/landscape toggle on rotatable devices
+- **Custom Devices** — define your own presets from the settings page
+- **User Agent Switcher** — 13 baked-in agents (Chrome, Firefox, Safari, Edge on desktop and mobile)
+- **Responsive Walk** — animated sweep from 1440px to 320px with scrubbable progress bar
+- **Settings page** — enable or disable any viewport from the dropdown
 
-## Changelog 
+## Website
 
-Version 3.1.0
-• Added User Agent Switcher — 13 baked-in agents (Chrome, Firefox, Safari, Edge · desktop & mobile) with JS-level navigator.userAgent override that persists across iframe navigation
-• Added Responsive Walk — play/pause animation that sweeps the iframe from 1440px down to 320px over 10 seconds, with a scrubable progress bar pinned to the bottom of the preview window
+https://phildesigns.com
 
-Version 3.0.0
-• Bumped version for major release
-• Switched preview bar to flexbox layout for consistent alignment and padding
-• Moved orientation toggle out of select box and placed beside it
-• Introduced "Settings" link on Plugins page
-• Added support for enabling/disabling viewports and custom device management
-• Updated colors, fonts, and styles; improved selector positioning
-• Various bug fixes and markup cleanup
+---
 
-Version 2.0.0
-• Code & style tweaks 
-• Added a dropdown for popular viewports
-• Added font awesome to streamline the amount of files
+## Installation
 
-Version 1.0.0
-• Initial release.
+1. Upload the `responsive-preview` folder to `/wp-content/plugins/`
+2. Activate the plugin through the **Plugins** menu in WordPress
+3. Click **Responsive Preview** in the admin toolbar to open the preview
+
+---
+
+## Usage
+
+1. Click **Responsive Preview** in the admin toolbar — a new window opens.
+2. Use **SELECT VIEWPORT** to switch device sizes.
+3. Use **SELECT USER AGENT** to override the browser user agent in the iframe.
+4. Click the orange play button at the bottom to start a Responsive Walk.
+
+---
+
+## Changelog
+
+### 3.1.0
+- Added User Agent Switcher — 13 baked-in agents (Chrome, Firefox, Safari, Edge · desktop & mobile)
+- Added Responsive Walk — animated iframe width sweep from 1440px to 320px with scrubbable progress bar
+
+### 3.0.0
+- Switched preview bar to flexbox layout
+- Added Settings link on Plugins page
+- Added viewport enable/disable and custom device management
+
+### 2.0.0
+- Added viewport dropdown with popular device sizes
+- Added FontAwesome icons
+
+### 1.0.0
+- Initial release

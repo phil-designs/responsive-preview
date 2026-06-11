@@ -1,14 +1,24 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
-* Plugin Name: Responsive Preview
-* Plugin URI: http://www.phildesigns.com
-* Description: This plugin wraps your Wordpress site within an interface to allow you to preview the mobile responsiveness of your theme.
-* Version: 3.1.0
-* Author: phil.designs | Phillip De Vita
-* Author URI: http://www.phildesigns.com
-* License: GPL2
-*/
+ * Plugin Name:       PhilDesigns Responsive Preview
+ * Plugin URI:        https://phildesigns.com
+ * Description:       Wraps your WordPress site in a preview interface so you can test mobile responsiveness across device viewports, user agents, and animated width walks.
+ * Version:           3.1.0
+ * Author:            PhilDesigns
+ * Author URI:        https://phildesigns.com
+ * License:           GPL-2.0-or-later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:       responsive-preview
+ * Domain Path:       /languages
+ * Requires at least: 6.7
+ * Tested up to:      7.0
+ * Requires PHP:      7.4
+ */
 
 /**
  * Return an array of default device definitions used by the plugin.
@@ -26,35 +36,35 @@ function rp_get_default_devices() {
             'name'      => 'Desktop',
             'width'     => '100%',
             'height'    => '100%',
-            'icon'      => 'fa fa-desktop',
+            'icon'      => 'fas fa-desktop',
             'rotatable' => false,
         ),
         'laptop' => array(
             'name'      => 'Laptop (1024px)',
             'width'     => 1024,
             'height'    => '100%',
-            'icon'      => 'fa fa-laptop',
+            'icon'      => 'fas fa-laptop',
             'rotatable' => false,
         ),
         'laptop_wide' => array(
             'name'      => 'Laptop (1440px)',
             'width'     => 1440,
             'height'    => '100%',
-            'icon'      => 'fa fa-laptop',
+            'icon'      => 'fas fa-laptop',
             'rotatable' => false,
         ),
         'tablet' => array(
             'name'      => 'Tablet (768px)',
             'width'     => 768,
             'height'    => '100%',
-            'icon'      => 'fa fa-tablet',
+            'icon'      => 'fas fa-tablet',
             'rotatable' => false,
         ),
         'ipad' => array(
             'name'      => 'iPad (834px)',
             'width'     => 834,
             'height'    => 1112,
-            'icon'      => 'fa fa-tablet',
+            'icon'      => 'fas fa-tablet',
             'rotatable' => true,
         ),
         // phones
@@ -62,28 +72,28 @@ function rp_get_default_devices() {
             'name'      => 'iPhone SE',
             'width'     => 320,
             'height'    => 568,
-            'icon'      => 'fa fa-mobile',
+            'icon'      => 'fas fa-mobile',
             'rotatable' => true,
         ),
         'iphone_xr' => array(
             'name'      => 'iPhone XR / 11 / 12 / 13 / 14',
             'width'     => 414,
             'height'    => 896,
-            'icon'      => 'fa fa-mobile',
+            'icon'      => 'fas fa-mobile',
             'rotatable' => true,
         ),
         'iphone_pro' => array(
             'name'      => 'iPhone 14 Pro',
             'width'     => 393,
             'height'    => 852,
-            'icon'      => 'fa fa-mobile',
+            'icon'      => 'fas fa-mobile',
             'rotatable' => true,
         ),
         'pixel7' => array(
             'name'      => 'Google Pixel 7',
             'width'     => 393,
             'height'    => 851,
-            'icon'      => 'fa fa-mobile',
+            'icon'      => 'fas fa-mobile',
             'rotatable' => true,
         ),
         // legacy
@@ -91,27 +101,27 @@ function rp_get_default_devices() {
             'name'      => 'Android Nexus 4',
             'width'     => 384,
             'height'    => 600,
-            'icon'      => 'fa fa-mobile',
+            'icon'      => 'fas fa-mobile',
             'rotatable' => true,
         ),
     );
 }
 
 // add a link to the WP Toolbar
-function custom_toolbar_link($wp_admin_bar) {
+function rp_toolbar_link( $wp_admin_bar ) {
     $args = array(
-        'id' => 'responsive_preview',
-        'title' => 'Responsive Preview', 
-        'href' => plugin_dir_url( __FILE__ ) . 'preview-page.php', 
-        'meta' => array(
-            'class' => 'responsive_preview_btn',
-            'target' => '_blank', 
-            'title' => 'Responsive Preview'
-            )
+        'id'    => 'responsive_preview',
+        'title' => 'Responsive Preview',
+        'href'  => plugin_dir_url( __FILE__ ) . 'preview-page.php',
+        'meta'  => array(
+            'class'  => 'responsive_preview_btn',
+            'target' => '_blank',
+            'title'  => 'Responsive Preview',
+        ),
     );
-    $wp_admin_bar->add_node($args);
+    $wp_admin_bar->add_node( $args );
 }
-add_action('admin_bar_menu', 'custom_toolbar_link', 999);
+add_action( 'admin_bar_menu', 'rp_toolbar_link', 999 );
 /* The add_action # is the menu position:
 10 = Before the WP Logo
 15 = Between the logo and My Sites
@@ -120,9 +130,9 @@ add_action('admin_bar_menu', 'custom_toolbar_link', 999);
 */
 
 // add a "Settings" link under the plugin name on the Plugins page
-add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'rp_settings_link');
+add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'rp_settings_link' );
 function rp_settings_link( $links ) {
-    $settings_link = '<a href="options-general.php?page=responsive-preview">Settings</a>';
+    $settings_link = '<a href="' . esc_url( admin_url( 'options-general.php?page=responsive-preview' ) ) . '">' . esc_html__( 'Settings', 'responsive-preview' ) . '</a>';
     array_unshift( $links, $settings_link );
     return $links;
 }
@@ -267,7 +277,7 @@ function rp_sanitize_custom_devices( $input ) {
             'name'      => $name,
             'width'     => $width,
             'height'    => $height,
-            'icon'      => 'fa fa-mobile',
+            'icon'      => 'fas fa-mobile',
             'rotatable' => $rot,
         );
     }
@@ -346,8 +356,8 @@ function rp_options_page() {
             $(this).closest('tr').remove();
         });
         // populate existing
-        var existing = <?php echo json_encode(get_option('rp_custom_devices', array())); ?>;
-        var selected = <?php echo json_encode(get_option('rp_devices', array())); ?>;
+        var existing = <?php echo wp_json_encode( get_option( 'rp_custom_devices', array() ) ); ?>;
+        var selected = <?php echo wp_json_encode( get_option( 'rp_devices', array() ) ); ?>;
         for(var k in existing){ if(existing.hasOwnProperty(k)){
             existing[k].key = k;
             existing[k].enabled = selected[k] ? true : false;
@@ -367,5 +377,3 @@ function rp_add_admin_menu() {
         'rp_options_page'
     );
 }
-
-?>

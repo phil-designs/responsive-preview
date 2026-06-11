@@ -1,11 +1,11 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- standalone bootstrap page; vars are local to this file.
 
-$absolute_path = __FILE__;
-$path_to_file = explode( 'wp-content', $absolute_path );
-$path_to_wp = $path_to_file[0];
-
-// Access WordPress
-require_once( $path_to_wp . '/wp-load.php' );
+if ( ! defined( 'ABSPATH' ) ) {
+	// Accessed directly — bootstrap WordPress.
+	$path_to_file = explode( 'wp-content', __FILE__ );
+	require_once $path_to_file[0] . '/wp-load.php';
+}
 
 ?>
 <!doctype html>
@@ -15,10 +15,11 @@ require_once( $path_to_wp . '/wp-load.php' );
 <title>Responsive Preview</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-<link href="css/rp-styles.css" rel="stylesheet">
+<?php // phpcs:disable WordPress.WP.EnqueuedResources -- standalone HTML page rendered outside WP template system; wp_enqueue_style/script() not applicable. ?>
+<link rel="stylesheet" href="<?php echo esc_url( plugin_dir_url( __FILE__ ) . 'assets/vendor/font-awesome/css/all.min.css' ); ?>">
+<link rel="stylesheet" href="<?php echo esc_url( plugin_dir_url( __FILE__ ) . 'css/rp-styles.css' ); ?>">
+<?php // phpcs:enable WordPress.WP.EnqueuedResources ?>
+<?php wp_print_script_tag( array( 'src' => esc_url( includes_url( 'js/jquery/jquery.min.js' ) ) ) ); ?>
 </head>
 
 <body id="rp-bg">
@@ -32,7 +33,7 @@ require_once( $path_to_wp . '/wp-load.php' );
                 <div class="sel-box">
                     <div class="select" id="device-select-trigger">
                         <span id="select">SELECT VIEWPORT</span>
-                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
                     </div>
                     <ul class="toc-odd level-1" id="sel-option">
                         <?php
@@ -63,7 +64,7 @@ require_once( $path_to_wp . '/wp-load.php' );
                 <div class="sel-box" id="ua-sel-box">
                     <div class="select" id="ua-select-trigger">
                         <span id="ua-label">SELECT USER AGENT</span>
-                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
                     </div>
                     <ul class="toc-odd toc-ua" id="ua-options">
                         <li><a href="#" data-ua="default">Default (Browser UA)</a></li>
@@ -91,19 +92,19 @@ require_once( $path_to_wp . '/wp-load.php' );
         </div>
     </div>
 
-    <iframe id="rp-window" src="<?php echo get_home_url(); ?>" frameborder="0"></iframe>
+    <iframe id="rp-window" src="<?php echo esc_url( get_home_url() ); ?>" frameborder="0"></iframe>
 
     <!-- Responsive Walk Bar -->
     <div id="rp-walk-bar">
         <span class="rp-walk-label">WALK</span>
         <button id="rp-walk-play" title="Animate from 1440px to 320px">
-            <i class="fa fa-play"></i>
+            <i class="fas fa-play"></i>
         </button>
         <input type="range" id="rp-walk-scrubber" min="0" max="100" value="0" step="0.1">
         <span id="rp-walk-width">1440px</span>
     </div>
 
-<script type="text/javascript">
+<script>
 jQuery(function($){
 
     // =========================================================
@@ -121,7 +122,7 @@ jQuery(function($){
     // =========================================================
     // Device / Viewport
     // =========================================================
-    var devices = <?php echo json_encode( rp_get_all_devices() ); ?>;
+    var devices = <?php echo wp_json_encode( rp_get_all_devices() ); ?>;
     var currentDevice = null;
     var currentOrientation = 'portrait';
 
@@ -275,7 +276,7 @@ jQuery(function($){
             walk.active    = false;
             walk.animFrame = null;
             $iframe.css('transition', '');
-            $('#rp-walk-play i').removeClass('fa-pause').addClass('fa-repeat');
+            $('#rp-walk-play i').removeClass('fa-pause').addClass('fa-redo');
         }
     }
 
@@ -287,7 +288,7 @@ jQuery(function($){
         walk.active    = true;
         walk.startTime = null;
         $iframe.css('transition', 'none'); // disable CSS transition during rAF animation
-        $('#rp-walk-play i').removeClass('fa-play fa-repeat').addClass('fa-pause');
+        $('#rp-walk-play i').removeClass('fa-play fa-redo').addClass('fa-pause');
         walk.animFrame = requestAnimationFrame(walkTick);
     }
 

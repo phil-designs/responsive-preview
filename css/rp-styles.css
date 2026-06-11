@@ -39,7 +39,7 @@ body {
 #aa-logo {
     width: 350px;
     height: 50px;
-    background-image: url('https://phildesigns.com/wp-content/uploads/2025/12/phildesigns-logo.svg');
+    background-image: url('../img/phildesigns-logo.svg');
     background-repeat: no-repeat;
     background-position: left 25px center;
     background-size: contain;
@@ -51,7 +51,7 @@ body {
     text-align: center;
     flex: 1;
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
     font-size: 1.35em;
     font-weight: 600;
 }
@@ -69,14 +69,14 @@ body {
     position: relative;
     z-index: 3;
     color: #fff;
-    font-family: 'Poppins', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
     display: inline-block;
 }
 
 a {
     text-decoration: none;
     color: #fff;
-    font-family: 'Poppins', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
     font-size: 0.85em;
     font-weight: 600;
 }
@@ -150,7 +150,7 @@ em {
 
 .ua-group-header {
     color: #666;
-    font-family: 'Poppins', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
     font-size: 0.72em;
     font-weight: 600;
     letter-spacing: 0.05em;
@@ -179,7 +179,7 @@ i {
     border: 2px solid #F7941D;
     cursor: pointer;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
     font-weight: 300;
     text-align: center;
     text-decoration: none;
@@ -224,7 +224,7 @@ iframe#rp-window {
 
 .rp-walk-label {
     color: #555;
-    font-family: 'Poppins', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
     font-size: 0.65em;
     font-weight: 600;
     letter-spacing: 0.1em;
@@ -323,7 +323,7 @@ iframe#rp-window {
 
 #rp-walk-width {
     color: #888;
-    font-family: 'Poppins', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
     font-size: 0.72em;
     font-weight: 600;
     width: 52px;
