@@ -60,6 +60,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     </ul>
                 </div>
 
+<<<<<<< Updated upstream
                 <!-- User Agent Selector -->
                 <div class="sel-box" id="ua-sel-box">
                     <div class="select" id="ua-select-trigger">
@@ -85,6 +86,8 @@ if ( ! defined( 'ABSPATH' ) ) {
                     </ul>
                 </div>
 
+=======
+>>>>>>> Stashed changes
                 <!-- Orientation Toggle -->
                 <button id="orientation-toggle" style="display:none;">Portrait</button>
 
@@ -168,63 +171,9 @@ jQuery(function($){
         setViewport(currentDevice);
     });
 
-    // =========================================================
-    // User Agent Switcher
-    // Source: useragents.me — baked-in list, current as of 2025
-    // Note: overrides navigator.userAgent via JS after iframe load;
-    // affects JS-based UA detection but not HTTP-level headers.
-    // =========================================================
-    var userAgents = {
-        'default':         { label: 'Default (Browser UA)',       string: null },
-        'chrome-win':      { label: 'Chrome 135 · Windows',      string: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36' },
-        'chrome-mac':      { label: 'Chrome 135 · macOS',        string: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36' },
-        'firefox-win':     { label: 'Firefox 137 · Windows',     string: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Firefox/137.0' },
-        'firefox-mac':     { label: 'Firefox 137 · macOS',       string: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 14.7; rv:137.0) Gecko/20100101 Firefox/137.0' },
-        'safari-mac':      { label: 'Safari 18 · macOS',         string: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 14_7_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.4 Safari/605.1.15' },
-        'edge-win':        { label: 'Edge 135 · Windows',        string: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0' },
-        'safari-iphone':   { label: 'Safari · iPhone iOS 18',    string: 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3.2 Mobile/15E148 Safari/604.1' },
-        'chrome-iphone':   { label: 'Chrome · iPhone iOS 18',    string: 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/135.0.6478.153 Mobile/15E148 Safari/604.1' },
-        'safari-ipad':     { label: 'Safari · iPad iPadOS 18',   string: 'Mozilla/5.0 (iPad; CPU OS 18_3_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3.2 Mobile/15E148 Safari/604.1' },
-        'chrome-android':  { label: 'Chrome 135 · Android',      string: 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36' },
-        'samsung-android': { label: 'Samsung Internet · Android',string: 'Mozilla/5.0 (Linux; Android 14; SAMSUNG SM-S911B) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/27.0 Chrome/125.0.0.0 Mobile Safari/537.36' },
-        'firefox-android': { label: 'Firefox 137 · Android',     string: 'Mozilla/5.0 (Android 15; Mobile; rv:137.0) Gecko/137.0 Firefox/137.0' }
-    };
-    var currentUA = 'default';
-
-    function injectUA() {
-        if ( currentUA === 'default' || ! userAgents[currentUA] || ! userAgents[currentUA].string ) return;
-        var uaString = userAgents[currentUA].string;
-        try {
-            Object.defineProperty( document.getElementById('rp-window').contentWindow.navigator, 'userAgent', {
-                get: function() { return uaString; },
-                configurable: true
-            });
-        } catch(e) {}
-    }
-
-    // Re-inject on every iframe navigation so it survives page loads
-    $iframe.on('load', function(){
-        injectUA();
-    });
-
-    $('#ua-select-trigger').click(function(){
-        $('#ua-options').toggle();
-        $('#sel-option').hide();
-    });
-
-    $('#ua-options').on('click', 'a', function(e){
-        e.preventDefault();
-        var uaKey = $(this).data('ua');
-        if ( ! userAgents[uaKey] ) return;
-        currentUA = uaKey;
-        $('#ua-label').text( userAgents[uaKey].label );
-        $('#ua-options').hide();
-        document.getElementById('rp-window').contentWindow.location.reload();
-    });
-
     // Close all dropdowns on outside click
     $(document).on('click', function(){
-        $('#sel-option, #ua-options').hide();
+        $('#sel-option').hide();
     });
     $('.sel-box').on('click', function(e){
         e.stopPropagation();
@@ -318,6 +267,10 @@ jQuery(function($){
 
     // Initialise scrubber fill
     updateScrubberFill(0);
+
+    // Set desktop as default on load so iframe starts at full width
+    setViewport('desktop');
+    $('#select').text('Desktop');
 
 });
 </script>

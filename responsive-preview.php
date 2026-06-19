@@ -7,7 +7,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Plugin Name:       PhilDesigns Responsive Preview
  * Plugin URI:        https://phildesigns.com
+<<<<<<< Updated upstream
  * Description:       Wraps your WordPress site in a preview interface so you can test mobile responsiveness across device viewports, user agents, and animated width walks.
+=======
+ * Description:       Wraps your WordPress site in a preview interface so you can test mobile responsiveness across device viewports and animated width walks.
+>>>>>>> Stashed changes
  * Version:           3.1.0
  * Author:            PhilDesigns
  * Author URI:        https://phildesigns.com

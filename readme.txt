@@ -8,17 +8,28 @@ Stable tag: 3.1.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
+<<<<<<< Updated upstream
 Preview your WordPress site across device viewports, user agents, and animated width walks — directly from the admin toolbar.
 
 == Description ==
 
 Responsive Preview adds a link to the WordPress admin toolbar that opens your site inside a full-screen preview interface. You can switch between device viewport sizes, spoof browser user agents, and use the Responsive Walk feature to animate a smooth sweep from 1440px down to 320px.
+=======
+Preview your WordPress site across device viewports and animated width walks — directly from the admin toolbar.
+
+== Description ==
+
+Responsive Preview adds a link to the WordPress admin toolbar that opens your site inside a full-screen preview interface. Switch between device viewport sizes and use the Responsive Walk feature to animate a smooth sweep from 1440px down to 320px.
+>>>>>>> Stashed changes
 
 = Features =
 
 * **Device Viewports** — desktop, laptops, iPad, iPhones, Pixel, and more; toggle portrait/landscape on rotatable devices
 * **Custom Devices** — define your own device presets with a name, width, and height; manage them from the settings page
+<<<<<<< Updated upstream
 * **User Agent Switcher** — 13 baked-in agents (Chrome, Firefox, Safari, Edge on desktop and mobile); overrides navigator.userAgent in the iframe via JavaScript
+=======
+>>>>>>> Stashed changes
 * **Responsive Walk** — play/pause animation that sweeps the iframe from 1440px to 320px over 10 seconds, with a scrubbable progress bar
 * **Settings page** — enable or disable any viewport from the device dropdown
 
@@ -27,8 +38,12 @@ Responsive Preview adds a link to the WordPress admin toolbar that opens your si
 1. After activation, click **Responsive Preview** in the admin toolbar (top bar).
 2. A new window opens with your site in the preview frame.
 3. Use the **SELECT VIEWPORT** dropdown to switch device sizes.
+<<<<<<< Updated upstream
 4. Use **SELECT USER AGENT** to override the browser user agent in the iframe.
 5. Click the orange play button at the bottom to start a Responsive Walk.
+=======
+4. Click the orange play button at the bottom to start a Responsive Walk.
+>>>>>>> Stashed changes
 
 == Installation ==
 
@@ -38,10 +53,13 @@ Responsive Preview adds a link to the WordPress admin toolbar that opens your si
 
 == Frequently Asked Questions ==
 
+<<<<<<< Updated upstream
 = Does User Agent switching affect server-side detection? =
 
 No. The user agent is overridden via JavaScript after the iframe loads, so it only affects client-side JavaScript-based UA detection. Server-side UA detection (PHP, server logs) will still see the real browser UA.
 
+=======
+>>>>>>> Stashed changes
 = Can I add my own device sizes? =
 
 Yes. Go to **Settings → Responsive Preview**, scroll to the Custom Devices section, and add as many devices as you like.
@@ -59,7 +77,10 @@ The Desktop option (100% width) is always enabled so there is always at least on
 == Changelog ==
 
 = 3.1.0 =
+<<<<<<< Updated upstream
 * Added User Agent Switcher — 13 baked-in agents (Chrome, Firefox, Safari, Edge · desktop & mobile)
+=======
+>>>>>>> Stashed changes
 * Added Responsive Walk — animated iframe width sweep from 1440px to 320px with scrubbable progress bar
 
 = 3.0.0 =
@@ -79,4 +100,8 @@ The Desktop option (100% width) is always enabled so there is always at least on
 == Upgrade Notice ==
 
 = 3.1.0 =
+<<<<<<< Updated upstream
 Adds User Agent Switcher and Responsive Walk features.
+=======
+Adds Responsive Walk feature.
+>>>>>>> Stashed changes
