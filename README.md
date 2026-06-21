@@ -165,7 +165,7 @@ Project Link: [https://github.com/phil-designs/responsive-preview](https://githu
 [license-url]: https://github.com/phil-designs/responsive-preview/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/phildesigns
-[product-screenshot]: https://phildesigns.com/wp-content/uploads/2026/06/website-showcase-preview-responsive-individual-name-philip-vita.png
+[product-screenshot]: https://phildesigns.com/wp-content/uploads/2026/06/website-showcase-preview-responsive-individual-name-philip-vita-1.png
 [JQuery-badge]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com
 [WordPress-badge]: https://img.shields.io/badge/WordPress-21759B?style=for-the-badge&logo=wordpress&logoColor=white
